@@ -24,7 +24,6 @@ public class GameListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_list);
 
-        //EXPERIMENT 1: CREATE THE DATABASE
         this.deleteDatabase(DBHelper.DATABASE_NAME);
         db = new DBHelper(this);
 
@@ -57,7 +56,7 @@ public class GameListActivity extends AppCompatActivity {
 
     public void addGame(View view)
     {
-        Log.i("addGame", "entered add game");
+
         EditText nameEditText = (EditText) findViewById(R.id.nameEditText);
         EditText descriptionEditText = (EditText) findViewById(R.id.descriptionEditText);
         RatingBar ratingBar = (RatingBar) findViewById(R.id.gameRatingBar);
