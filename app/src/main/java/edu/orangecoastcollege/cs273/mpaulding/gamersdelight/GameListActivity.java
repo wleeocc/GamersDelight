@@ -40,7 +40,7 @@ public class GameListActivity extends AppCompatActivity {
 
     }
 
-    public void loadGameDetails(View view) {
+    public void viewGameDetails(View view) {
         if (view instanceof LinearLayout) {
             LinearLayout selectedLayout = (LinearLayout) view;
             Game selectedGame = (Game) selectedLayout.getTag();
