@@ -43,7 +43,7 @@ public class GameListAdapter extends ArrayAdapter<Game> {
     @Override
     public View getView(int pos, View convertView, ViewGroup parent)
     {
-        //final Game selectedGame = mGamesList.get(pos);// TODO
+        //final Game selectedGame = mGamesList.get(pos);
 
         LayoutInflater inflater =
                 (LayoutInflater) mContext.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
