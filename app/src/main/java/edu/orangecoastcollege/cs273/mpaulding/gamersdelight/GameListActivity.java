@@ -1,14 +1,9 @@
 package edu.orangecoastcollege.cs273.mpaulding.gamersdelight;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.RatingBar;
 
 import java.util.List;
 
@@ -33,50 +28,27 @@ public class GameListActivity extends AppCompatActivity {
         db.addGame(new Game("Doom FLH", "First person shooter", 2.5f, "doomflh.png"));
         db.addGame(new Game("Battlefield 1", "Single player campaign", 5.0f, "battlefield1.png"));
 
-        gamesList = db.getAllGames();
-        gamesListAdapter = new GameListAdapter(this, R.layout.game_list_item, gamesList);
-        gamesListView = (ListView) findViewById(R.id.gameListView);
-        gamesListView.setAdapter(gamesListAdapter);
-
+        // TODO:  Populate all games from the database into the list
+        // TODO:  Create a new ListAdapter connected to the correct layout file and list
+        // TODO:  Connect the ListView with the ListAdapter
     }
 
     public void viewGameDetails(View view) {
-        if (view instanceof LinearLayout) {
-            LinearLayout selectedLayout = (LinearLayout) view;
-            Game selectedGame = (Game) selectedLayout.getTag();
-            Log.i("Gamers Delight", selectedGame.toString());
-            Intent detailsIntent = new Intent(this, GameDetailsActivity.class);
-            detailsIntent.putExtra("Name", selectedGame.getName());
-            detailsIntent.putExtra("Description", selectedGame.getDescription());
-            detailsIntent.putExtra("Rating", selectedGame.getRating());
-            detailsIntent.putExtra("ImageName", selectedGame.getImageName());
-            startActivity(detailsIntent);
-        }
+
+        // TODO: Use an Intent to start the GameDetailsActivity with the data it needs to correctly inflate its views.
+
     }
 
     public void addGame(View view)
     {
-
-        EditText nameEditText = (EditText) findViewById(R.id.nameEditText);
-        EditText descriptionEditText = (EditText) findViewById(R.id.descriptionEditText);
-        RatingBar ratingBar = (RatingBar) findViewById(R.id.gameRatingBar);
-
-        Game newGame = new Game(nameEditText.getText().toString(),
-                        descriptionEditText.getText().toString(),
-                        ratingBar.getRating());
-
-        db.addGame(newGame);
-        gamesListAdapter.add(newGame);
-        nameEditText.setText("");
-        descriptionEditText.setText("");
-        ratingBar.setRating(0.0f);
+        // TODO:  Add a game to the database, list, list adapter
+        // TODO:  Make sure the list adapter is updated
+        // TODO:  Clear all entries the user made (edit text and rating bar)
     }
 
     public void clearAllGames(View view)
     {
-        gamesList.clear();
-        db.deleteAllGames();
-        gamesListAdapter.notifyDataSetChanged();
+        // TODO:  Delete all games from the database and lists
     }
 
 }
