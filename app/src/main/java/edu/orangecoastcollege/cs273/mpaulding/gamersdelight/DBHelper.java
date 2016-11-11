@@ -86,7 +86,12 @@ class DBHelper extends SQLiteOpenHelper {
         );
         if (cursor.moveToFirst()){
             do {
-                Game game = new Game(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getFloat(3), cursor.getString(4));
+                Game game = new Game(
+                        cursor.getInt(0),
+                        cursor.getString(1),
+                        cursor.getString(2),
+                        cursor.getFloat(3),
+                        cursor.getString(4));
                 gameList.add(game);
             } while(cursor.moveToNext());
         }
@@ -132,7 +137,12 @@ class DBHelper extends SQLiteOpenHelper {
         if (cursor != null)
             cursor.moveToFirst();
 
-        Game game = new Game(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getFloat(3), cursor.getString(4));
+        Game game = new Game(
+                cursor.getInt(0),
+                cursor.getString(1),
+                cursor.getString(2),
+                cursor.getFloat(3),
+                cursor.getString(4));
 
 
         db.close();
